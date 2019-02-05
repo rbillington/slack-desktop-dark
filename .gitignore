@@ -3,4 +3,8 @@
 !PKGBUILD
 !slack-desktop.patch
 !darkify_slack.js
+!darkify_slack_preamble.js
+!darkify_slack.css
+!darkify_slack_custom.css
+!darkify_slack_afterword.js
 !.SRCINFO

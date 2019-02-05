@@ -1,4 +1,5 @@
-# Maintainer: Seamus Connor 
+# Maintainer: Seamus Connor
+# Contributor: Ryan Billington
 
 pkgname=slack-desktop-dark
 pkgver=3.3.7
@@ -11,11 +12,17 @@ depends=('alsa-lib' 'gconf' 'gtk3' 'libcurl-compat' 'libsecret' 'libxss' 'libxts
 optdepends=('gnome-keyring')
 conflicts=('slack-desktop')
 source=("https://downloads.slack-edge.com/linux_releases/${pkgname%-dark}-${pkgver}-amd64.deb"
-		"darkify_slack.js"
+		"darkify_slack_preamble.js"
+		"darkify_slack.css"
+		"darkify_slack_custom.css"
+		"darkify_slack_afterword.js"
     	"${pkgname}.patch")
 noextract=("${pkgname%-dark}-${pkgver}-amd64.deb")
 sha256sums=('17310bc323eafcef86c134c7aea9b53a82f8394aa30a886ac419f9a5a23168e0'
-            'c14c22fd39a6cca72669a8a470f8b193e96757477c515f66506bd36f62b5af10'
+            'ffbe44c64f8a25816ea78731f97af49e1aab530e942e432f3836a0a9a1ab62a5'
+            '08f4bd0abbc6eedf44be74d3cc7de9596318a59b721b3103d812e5d9d1fb8d07'
+            'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+            '4f1a6104256ccdb7ceb85a4272477e87cca2aaaeef4cb0cab1d2ad03554e815d'
             'c952eb32dd59beff9fc5374853b04acde4a60ed8c39934fcd0b66829455d594d')
 
 package() {
@@ -32,7 +39,7 @@ package() {
     rm -rf "${pkgdir}/usr/share/lintian"
     rm -rf "${pkgdir}/usr/share/doc"
 
-    cat darkify_slack.js >> "${pkgdir}/usr/lib/slack/resources/app.asar.unpacked/src/static/ssb-interop.js"
+    cat darkify_slack_preamble.js darkify_slack.css darkify_slack_custom.css darkify_slack_afterword.js >> "${pkgdir}/usr/lib/slack/resources/app.asar.unpacked/src/static/ssb-interop.js"
 
     # Move license
     install -dm755 "${pkgdir}/usr/share/licenses/${pkgname}"

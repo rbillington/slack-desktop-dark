@@ -1,3 +1,55 @@
-#msg_input, #primary_file_button, .p-message_input, .p-message_input_field, .p-message_input_file_button {
-    background: rgb(76, 76, 76) !important;
+:root {
+  /*[> MY CUSTOM THEME <]*/
+  --primary: #428bca;
+  --text: #c9c6bc;
+  --background: #2d2d2d;
+  --background-elevated: #202020;
+  --color-highlight: var(--primary);
+
+  /* These should be less important: */
+  --background-hover: rgba(255, 255, 255, 0.1);
+  --background-light: #AAA;
+  --background-bright: #FFF;
+
+  --border-dim: #666;
+  --border-bright: rgb(85, 85, 85);
+
+  --text-bright: #f2f0ec;
+  --text-special: var(--primary);
+  --text-grey: #717274;
+
+  --scrollbar-background: rgb(120, 120, 120);
+  --scrollbar-border: rgb(120, 120, 120);
+
+  --active-icon: var(--color-highlight);
+
+  /*[> Modify these to change your theme colors: <]*/
+  /*[> DEFAULT THEME <]*/
+  /*--primary: #09F;*/
+  /*--text: #DDD;*/
+  /*--background: rgb(41, 42, 49);*/
+  /*--background-elevated: rgb(41, 42, 49);*/
+  /*--color-highlight: rgb(43, 107, 149);*/
+
+  /*[> These should be less important: <]*/
+  /*--background-hover: rgba(255, 255, 255, 0.1);*/
+  /*--background-light: #AAA;*/
+  /*--background-bright: #FFF;*/
+
+  /*--border-dim: #666;*/
+  /*--border-bright: rgb(85, 85, 85);*/
+
+  /*--text-bright: #FFF;*/
+  /*--text-special: var(--primary);*/
+  /*--text-grey: #717274;*/
+
+  /*--scrollbar-background: rgb(120, 120, 120);*/
+  /*--scrollbar-border: rgb(120, 120, 120);*/
+
+  /*--active-icon: rgb(43, 107, 149);*/
+}
+
+.c-message_list__unread_divider__separator {
+  border-bottom-width: 1px !important;
+  border-bottom-style: solid !important;
 }
